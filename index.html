@@ -1,0 +1,336 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Santhiya Govindaraj — Electoral Behavior Research</title>
+<meta name="description" content="Writings and research on electoral behavior by Santhiya Govindaraj.">
+
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+
+<style>
+  /* ============ Tokens ============ */
+  :root{
+    --paper: #EEF0E9;
+    --paper-raised: #F6F7F2;
+    --ink: #1C2033;
+    --ink-soft: #3A3F52;
+    --accent: #5B2A6B;
+    --accent-soft: #8A5B9B;
+    --muted: #6B6455;
+    --hairline: #D3D0C2;
+    --max-w: 780px;
+    --pad: clamp(20px, 5vw, 48px);
+  }
+
+  *{ box-sizing: border-box; }
+  html{ scroll-behavior: smooth; }
+
+  body{
+    margin: 0;
+    background: var(--paper);
+    color: var(--ink);
+    font-family: 'Inter', -apple-system, sans-serif;
+    font-size: 17px;
+    line-height: 1.6;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  a{ color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+  a:hover{ color: var(--accent-soft); }
+  a:focus-visible, button:focus-visible{
+    outline: 2px solid var(--accent);
+    outline-offset: 3px;
+    border-radius: 2px;
+  }
+
+  .wrap{
+    max-width: var(--max-w);
+    margin: 0 auto;
+    padding: 0 var(--pad);
+  }
+
+  .eyebrow{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    letter-spacing: 0.11em;
+    text-transform: uppercase;
+    color: var(--muted);
+  }
+
+  /* ============ Header ============ */
+  header{
+    padding: clamp(56px, 10vh, 96px) 0 40px;
+    position: relative;
+  }
+
+  .mark{
+    position: absolute;
+    top: 8px;
+    right: var(--pad);
+    width: 74px;
+    height: 74px;
+    opacity: 0.9;
+  }
+
+  h1{
+    font-family: 'Fraunces', serif;
+    font-optical-sizing: auto;
+    font-weight: 600;
+    font-size: clamp(2.4rem, 6vw, 3.4rem);
+    line-height: 1.05;
+    margin: 14px 0 10px;
+    letter-spacing: -0.01em;
+  }
+
+  .tagline{
+    font-size: 1.08rem;
+    color: var(--ink-soft);
+    max-width: 46ch;
+    margin: 0;
+  }
+
+  nav{
+    margin-top: 32px;
+    display: flex;
+    gap: 24px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+  }
+  nav a{
+    color: var(--ink);
+    text-decoration: none;
+    border-bottom: 1px solid var(--hairline);
+    padding-bottom: 3px;
+  }
+  nav a:hover{ color: var(--accent); border-color: var(--accent); }
+
+  hr.hairline{
+    border: none;
+    border-top: 1px solid var(--hairline);
+    margin: 0;
+  }
+
+  /* ============ Sections ============ */
+  section{
+    padding: 56px 0;
+    border-bottom: 1px solid var(--hairline);
+  }
+  section:last-of-type{ border-bottom: none; }
+
+  .section-head{
+    display: flex;
+    align-items: baseline;
+    gap: 12px;
+    margin-bottom: 28px;
+  }
+  .section-head .dot{
+    width: 9px; height: 9px;
+    border-radius: 50%;
+    background: var(--accent);
+    flex-shrink: 0;
+  }
+  .section-head h2{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.5rem;
+    margin: 0;
+  }
+
+  .bio p{
+    max-width: 62ch;
+    color: var(--ink-soft);
+  }
+  .bio .placeholder-note{
+    margin-top: 18px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+    color: var(--accent);
+    background: var(--paper-raised);
+    border: 1px dashed var(--hairline);
+    padding: 10px 14px;
+    border-radius: 4px;
+  }
+
+  /* ============ Writings list ============ */
+  .writing{
+    display: grid;
+    grid-template-columns: 84px 1fr;
+    gap: 18px;
+    padding: 22px 0;
+    border-top: 1px solid var(--hairline);
+  }
+  .writing:first-child{ border-top: none; padding-top: 0; }
+
+  .writing .year{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 13px;
+    color: var(--muted);
+    padding-top: 4px;
+  }
+
+  .writing h3{
+    font-family: 'Fraunces', serif;
+    font-weight: 500;
+    font-size: 1.18rem;
+    margin: 0 0 8px;
+  }
+  .writing h3 a{
+    color: var(--ink);
+    text-decoration: none;
+  }
+  .writing h3 a:hover{ color: var(--accent); }
+
+  .writing p{
+    margin: 0 0 10px;
+    color: var(--ink-soft);
+    font-size: 0.98rem;
+    max-width: 60ch;
+  }
+
+  .writing .read-link{
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12.5px;
+  }
+
+  /* ============ Contact ============ */
+  .contact-links{
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 14.5px;
+  }
+  .contact-links a{ text-decoration: none; }
+  .contact-links a:hover{ text-decoration: underline; }
+
+  footer{
+    padding: 32px var(--pad) 56px;
+    max-width: var(--max-w);
+    margin: 0 auto;
+    color: var(--muted);
+    font-family: 'IBM Plex Mono', monospace;
+    font-size: 12px;
+  }
+
+  @media (max-width: 520px){
+    .writing{ grid-template-columns: 1fr; gap: 4px; }
+    .mark{ width: 52px; height: 52px; top: 4px; }
+  }
+
+  @media (prefers-reduced-motion: reduce){
+    html{ scroll-behavior: auto; }
+  }
+</style>
+</head>
+<body>
+
+<div class="wrap">
+  <header>
+    <svg class="mark" viewBox="0 0 100 100" aria-hidden="true">
+      <circle cx="50" cy="50" r="46" fill="none" stroke="#5B2A6B" stroke-width="1.2" opacity="0.35"/>
+      <path d="M50 12 C68 12 82 28 82 48 C82 66 70 82 50 88 C32 82 20 66 20 48 C20 28 32 12 50 12 Z"
+            fill="#5B2A6B" opacity="0.14"/>
+      <path d="M50 20 C64 20 74 32 74 47" fill="none" stroke="#5B2A6B" stroke-width="1" opacity="0.5"/>
+      <path d="M50 28 C60 28 67 36 67 46" fill="none" stroke="#5B2A6B" stroke-width="1" opacity="0.5"/>
+      <path d="M50 36 C57 36 61 41 61 47" fill="none" stroke="#5B2A6B" stroke-width="1" opacity="0.5"/>
+      <path d="M32 52 C34 66 41 76 50 80" fill="none" stroke="#5B2A6B" stroke-width="1" opacity="0.5"/>
+      <path d="M40 58 C42 68 46 74 51 77" fill="none" stroke="#5B2A6B" stroke-width="1" opacity="0.5"/>
+    </svg>
+
+    <p class="eyebrow">Electoral Behavior — Research &amp; Writing</p>
+    <h1>Santhiya Govindaraj</h1>
+    <p class="tagline">
+      [EDIT: one-line description of your research focus — e.g. "Studying how caste,
+      class, and local media shape voting behavior in South India."]
+    </p>
+
+    <nav>
+      <a href="#about">About</a>
+      <a href="#writings">Writings</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </header>
+
+  <hr class="hairline">
+
+  <section id="about">
+    <div class="section-head">
+      <span class="dot"></span>
+      <h2>About</h2>
+    </div>
+    <div class="bio">
+      <p>
+        [EDIT: Replace this paragraph with your bio. A good academic bio usually covers:
+        what you study and why it matters, your institutional affiliation or background,
+        and one or two notable projects or findings. Keep it to 3–5 sentences.]
+      </p>
+      <p>
+        [EDIT: Optional second paragraph — current projects, methods you work with
+        (surveys, ethnography, quantitative modeling, etc.), or what draws you to
+        electoral behavior specifically.]
+      </p>
+      <p class="placeholder-note">
+        ↳ This whole section is placeholder text. Edit the two paragraphs above directly in index.html.
+      </p>
+    </div>
+  </section>
+
+  <section id="writings">
+    <div class="section-head">
+      <span class="dot"></span>
+      <h2>Writings</h2>
+    </div>
+
+    <div class="writing">
+      <div class="year">2026</div>
+      <div>
+        <h3><a href="#">[EDIT: Title of your first piece]</a></h3>
+        <p>[EDIT: One to two sentence summary of what this piece argues or finds. Keep it concrete — a claim, not just a topic.]</p>
+        <a class="read-link" href="#">Read →</a>
+      </div>
+    </div>
+
+    <div class="writing">
+      <div class="year">2025</div>
+      <div>
+        <h3><a href="#">[EDIT: Title of your second piece]</a></h3>
+        <p>[EDIT: One to two sentence summary. Link this to a PDF, a Google Doc, a published journal page, or a Substack post — anything with a URL.]</p>
+        <a class="read-link" href="#">Read →</a>
+      </div>
+    </div>
+
+    <div class="writing">
+      <div class="year">2025</div>
+      <div>
+        <h3><a href="#">[EDIT: Title of your third piece]</a></h3>
+        <p>[EDIT: One to two sentence summary of this piece.]</p>
+        <a class="read-link" href="#">Read →</a>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="section-head">
+      <span class="dot"></span>
+      <h2>Contact</h2>
+    </div>
+    <div class="contact-links">
+      <a href="mailto:your.email@example.com">your.email@example.com [EDIT]</a>
+      <a href="https://linkedin.com/in/your-profile" target="_blank" rel="noopener">linkedin.com/in/your-profile [EDIT]</a>
+    </div>
+  </section>
+</div>
+
+<footer>
+  © <span id="year"></span> Santhiya Govindaraj
+</footer>
+
+<script>
+  document.getElementById('year').textContent = new Date().getFullYear();
+</script>
+
+</body>
+</html>
