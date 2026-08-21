@@ -1,0 +1,231 @@
+/* ============ Tokens ============ */
+:root{
+  --paper: #FAF6EE;
+  --paper-raised: #F3EEE0;
+  --ink: #0F2D62;
+  --ink-soft: #2C4A78;
+  --accent: #227A84;
+  --accent-soft: #3D9AA3;
+  --muted: #5C6B7A;
+  --hairline: #D8DED8;
+  --max-w: 780px;
+  --pad: clamp(20px, 5vw, 48px);
+}
+
+*{ box-sizing: border-box; }
+html{ scroll-behavior: smooth; }
+
+body{
+  margin: 0;
+  background: var(--paper);
+  color: var(--ink);
+  font-family: 'Inter', -apple-system, sans-serif;
+  font-size: 17px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a{ color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover{ color: var(--accent-soft); }
+a:focus-visible, button:focus-visible{
+  outline: 2px solid var(--accent);
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+.wrap{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.eyebrow{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.11em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+/* ============ Header ============ */
+header{
+  padding: clamp(48px, 9vh, 88px) 0 40px;
+  position: relative;
+}
+
+.wordmark-link{
+  display: inline-block;
+  line-height: 0;
+}
+.wordmark{
+  width: min(100%, 480px);
+  height: auto;
+  display: block;
+}
+
+.byline{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  letter-spacing: 0.06em;
+  color: var(--muted);
+  margin: 16px 0 0;
+}
+
+nav.main-nav{
+  margin-top: 32px;
+  display: flex;
+  gap: 24px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+}
+nav.main-nav a{
+  color: var(--ink);
+  text-decoration: none;
+  border-bottom: 1px solid var(--hairline);
+  padding-bottom: 3px;
+}
+nav.main-nav a:hover{ color: var(--accent); border-color: var(--accent); }
+nav.main-nav a[aria-current="page"]{
+  color: var(--accent);
+  border-color: var(--accent);
+}
+
+hr.hairline{
+  border: none;
+  border-top: 1px solid var(--hairline);
+  margin: 0;
+}
+
+/* ============ Page body ============ */
+main{
+  padding: 56px 0;
+}
+
+.page-head{
+  display: flex;
+  align-items: baseline;
+  gap: 12px;
+  margin-bottom: 28px;
+}
+.page-head .dot{
+  width: 9px; height: 9px;
+  border-radius: 50%;
+  background: var(--accent);
+  flex-shrink: 0;
+}
+.page-head h2{
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.6rem;
+  margin: 0;
+}
+
+.bio p{
+  max-width: 62ch;
+  color: var(--ink-soft);
+}
+.bio .placeholder-note{
+  margin-top: 18px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+  color: var(--accent);
+  background: var(--paper-raised);
+  border: 1px dashed var(--hairline);
+  padding: 10px 14px;
+  border-radius: 4px;
+}
+
+/* Home page intro */
+.home-intro p{
+  max-width: 58ch;
+  color: var(--ink-soft);
+}
+.home-links{
+  display: flex;
+  gap: 16px;
+  margin-top: 28px;
+  flex-wrap: wrap;
+}
+.home-links a{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  text-decoration: none;
+  border: 1px solid var(--hairline);
+  padding: 9px 16px;
+  border-radius: 4px;
+  color: var(--ink);
+}
+.home-links a:hover{
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+/* ============ Writings list ============ */
+.writing{
+  display: grid;
+  grid-template-columns: 84px 1fr;
+  gap: 18px;
+  padding: 22px 0;
+  border-top: 1px solid var(--hairline);
+}
+.writing:first-child{ border-top: none; padding-top: 0; }
+
+.writing .year{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 13px;
+  color: var(--muted);
+  padding-top: 4px;
+}
+
+.writing h3{
+  font-family: 'Fraunces', serif;
+  font-weight: 500;
+  font-size: 1.18rem;
+  margin: 0 0 8px;
+}
+.writing h3 a{
+  color: var(--ink);
+  text-decoration: none;
+}
+.writing h3 a:hover{ color: var(--accent); }
+
+.writing p{
+  margin: 0 0 10px;
+  color: var(--ink-soft);
+  font-size: 0.98rem;
+  max-width: 60ch;
+}
+
+.writing .read-link{
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12.5px;
+}
+
+/* ============ Contact ============ */
+.contact-links{
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 14.5px;
+}
+.contact-links a{ text-decoration: none; }
+.contact-links a:hover{ text-decoration: underline; }
+
+footer{
+  padding: 32px var(--pad) 56px;
+  max-width: var(--max-w);
+  margin: 0 auto;
+  color: var(--muted);
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 12px;
+}
+
+@media (max-width: 520px){
+  .writing{ grid-template-columns: 1fr; gap: 4px; }
+  .mark{ width: 46px; height: 46px; top: 4px; }
+}
+
+@media (prefers-reduced-motion: reduce){
+  html{ scroll-behavior: auto; }
+}
