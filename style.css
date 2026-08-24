@@ -1,13 +1,12 @@
 /* ============ Tokens ============ */
 :root{
-  --paper: #FAF6EE;
-  --paper-raised: #F3EEE0;
-  --ink: #0F2D62;
-  --ink-soft: #2C4A78;
-  --accent: #227A84;
-  --accent-soft: #3D9AA3;
-  --muted: #5C6B7A;
-  --hairline: #D8DED8;
+  --blue: #14356B;
+  --blue-soft: #2C4F8A;
+  --cream: #FAF6EE;
+  --cream-raised: #F1ECDD;
+  --cream-soft: rgba(250, 246, 238, 0.82);
+  --muted: #5B6B85;
+  --hairline: #E4DFCF;
   --max-w: 780px;
   --pad: clamp(20px, 5vw, 48px);
 }
@@ -17,18 +16,18 @@ html{ scroll-behavior: smooth; }
 
 body{
   margin: 0;
-  background: var(--paper);
-  color: var(--ink);
+  background: var(--cream);
+  color: var(--blue);
   font-family: 'Inter', -apple-system, sans-serif;
   font-size: 17px;
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
 }
 
-a{ color: var(--accent); text-decoration-thickness: 1px; text-underline-offset: 3px; }
-a:hover{ color: var(--accent-soft); }
+a{ color: var(--blue); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover{ color: var(--blue-soft); }
 a:focus-visible, button:focus-visible{
-  outline: 2px solid var(--accent);
+  outline: 2px solid var(--blue);
   outline-offset: 3px;
   border-radius: 2px;
 }
@@ -47,53 +46,71 @@ a:focus-visible, button:focus-visible{
   color: var(--muted);
 }
 
-/* ============ Header ============ */
-header{
-  padding: clamp(48px, 9vh, 88px) 0 40px;
-  position: relative;
+/* ============ Header ribbon (full-bleed) ============ */
+header.ribbon{
+  background: var(--blue);
+  color: var(--cream);
+  width: 100%;
 }
 
-.wordmark-link{
-  display: inline-block;
-  line-height: 0;
-}
-.wordmark{
-  width: min(100%, 480px);
-  height: auto;
-  display: block;
+.header-inner{
+  max-width: var(--max-w);
+  margin: 0 auto;
+  padding: clamp(40px, 8vh, 72px) var(--pad) 32px;
 }
 
-.byline{
-  font-family: 'IBM Plex Mono', monospace;
-  font-size: 12.5px;
-  letter-spacing: 0.06em;
-  color: var(--muted);
-  margin: 16px 0 0;
+.brand{
+  display: flex;
+  align-items: center;
+  gap: 18px;
+}
+
+.brand img.logo{
+  width: 58px;
+  height: 58px;
+  flex-shrink: 0;
+}
+
+.brand-text h1.site-title{
+  font-family: 'Fraunces', serif;
+  font-optical-sizing: auto;
+  font-weight: 600;
+  font-size: clamp(1.9rem, 5vw, 2.7rem);
+  line-height: 1.05;
+  margin: 0;
+  letter-spacing: -0.01em;
+  color: var(--cream);
+}
+.brand-text h1.site-title a{
+  color: var(--cream);
+  text-decoration: none;
+}
+.brand-text h1.site-title a:hover{ opacity: 0.85; }
+
+.tagline{
+  font-size: 1.02rem;
+  color: var(--cream-soft);
+  max-width: 46ch;
+  margin: 6px 0 0;
 }
 
 nav.main-nav{
-  margin-top: 32px;
+  margin-top: 30px;
   display: flex;
   gap: 24px;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 13px;
 }
 nav.main-nav a{
-  color: var(--ink);
+  color: var(--cream-soft);
   text-decoration: none;
-  border-bottom: 1px solid var(--hairline);
+  border-bottom: 1px solid rgba(250, 246, 238, 0.35);
   padding-bottom: 3px;
 }
-nav.main-nav a:hover{ color: var(--accent); border-color: var(--accent); }
+nav.main-nav a:hover{ color: var(--cream); border-color: var(--cream); }
 nav.main-nav a[aria-current="page"]{
-  color: var(--accent);
-  border-color: var(--accent);
-}
-
-hr.hairline{
-  border: none;
-  border-top: 1px solid var(--hairline);
-  margin: 0;
+  color: var(--cream);
+  border-color: var(--cream);
 }
 
 /* ============ Page body ============ */
@@ -110,7 +127,7 @@ main{
 .page-head .dot{
   width: 9px; height: 9px;
   border-radius: 50%;
-  background: var(--accent);
+  background: var(--blue);
   flex-shrink: 0;
 }
 .page-head h2{
@@ -118,18 +135,20 @@ main{
   font-weight: 500;
   font-size: 1.6rem;
   margin: 0;
+  color: var(--blue);
 }
 
 .bio p{
   max-width: 62ch;
-  color: var(--ink-soft);
+  color: var(--blue);
+  opacity: 0.88;
 }
 .bio .placeholder-note{
   margin-top: 18px;
   font-family: 'IBM Plex Mono', monospace;
   font-size: 12.5px;
-  color: var(--accent);
-  background: var(--paper-raised);
+  color: var(--blue);
+  background: var(--cream-raised);
   border: 1px dashed var(--hairline);
   padding: 10px 14px;
   border-radius: 4px;
@@ -138,7 +157,8 @@ main{
 /* Home page intro */
 .home-intro p{
   max-width: 58ch;
-  color: var(--ink-soft);
+  color: var(--blue);
+  opacity: 0.88;
 }
 .home-links{
   display: flex;
@@ -153,11 +173,11 @@ main{
   border: 1px solid var(--hairline);
   padding: 9px 16px;
   border-radius: 4px;
-  color: var(--ink);
+  color: var(--blue);
 }
 .home-links a:hover{
-  border-color: var(--accent);
-  color: var(--accent);
+  border-color: var(--blue);
+  background: var(--cream-raised);
 }
 
 /* ============ Writings list ============ */
@@ -184,14 +204,15 @@ main{
   margin: 0 0 8px;
 }
 .writing h3 a{
-  color: var(--ink);
+  color: var(--blue);
   text-decoration: none;
 }
-.writing h3 a:hover{ color: var(--accent); }
+.writing h3 a:hover{ color: var(--blue-soft); }
 
 .writing p{
   margin: 0 0 10px;
-  color: var(--ink-soft);
+  color: var(--blue);
+  opacity: 0.85;
   font-size: 0.98rem;
   max-width: 60ch;
 }
@@ -223,7 +244,8 @@ footer{
 
 @media (max-width: 520px){
   .writing{ grid-template-columns: 1fr; gap: 4px; }
-  .mark{ width: 46px; height: 46px; top: 4px; }
+  .brand{ align-items: flex-start; }
+  .brand img.logo{ width: 44px; height: 44px; }
 }
 
 @media (prefers-reduced-motion: reduce){
