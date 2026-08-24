@@ -6,9 +6,6 @@
 <title>Ballots and Behaviors — Santhiya Govindaraj</title>
 <meta name="description" content="Writings and research on electoral behavior by Santhiya Govindaraj.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="logo.png">
 </head>
@@ -17,7 +14,7 @@
 <header class="ribbon">
   <div class="header-inner">
     <div class="brand">
-      <a href="index.html"><img src="logo.png" class="logo" alt="Ballots and Behaviors logo"></a>
+      <a href="index.html"><img src="logo-header.png" class="logo" alt="Ballots and Behaviors logo"></a>
       <div class="brand-text">
         <h1 class="site-title"><a href="index.html">Ballots and Behaviors</a></h1>
         <p class="tagline">Where politics meets psychology and media</p>
@@ -26,16 +23,18 @@
 
     <nav class="main-nav">
       <a href="index.html" aria-current="page">Home</a>
-      <a href="about.html">About</a>
-      <a href="writings.html">Writings</a>
-      <a href="contact.html">Contact</a>
+      <a href="about.html">My Background</a>
+      <a href="writings.html">Research Articles</a>
+      <a href="stats.html">Stats &amp; Figures</a>
+      <a href="contact.html">Get in Touch</a>
     </nav>
   </div>
 </header>
+<div class="header-spacer"></div>
 
 <div class="wrap">
   <main>
-    <div class="home-intro">
+    <div class="home-intro reveal">
       <p>
         This is where I write about electoral behavior in India — one of the largest
         and most dynamic electorates in the world — and about the intersection of
@@ -43,12 +42,12 @@
       </p>
     </div>
 
-    <blockquote class="thesis">
+    <blockquote class="thesis reveal reveal-delay-1">
       <p>Elections aren't just counted — they're felt, framed, and fought over in the mind.</p>
       <p class="placeholder-note">[EDIT: This is a draft thesis line — keep it, tweak it, or replace it with your own one-sentence framing.]</p>
     </blockquote>
 
-    <div class="stats-strip">
+    <div class="stats-strip reveal reveal-delay-2">
       <div class="stat">
         <div class="stat-num">75+</div>
         <div class="stat-label">Interviews conducted</div>
@@ -66,37 +65,53 @@
         <div class="stat-label">Years researching Indian electoral behavior</div>
       </div>
     </div>
+    <p class="reveal reveal-delay-2"><a class="read-link" href="stats.html">See full Stats &amp; Figures →</a></p>
 
-    <div class="featured">
+    <div class="featured reveal reveal-delay-1">
       <p class="eyebrow">Latest Writing</p>
       <h3><a href="writings.html#writing-1">[EDIT: Title of your first piece]</a></h3>
-      <p>[EDIT: One to two sentence summary of what this piece argues or finds — this should match the entry in your Writings page.]</p>
+      <p>[EDIT: One to two sentence summary of what this piece argues or finds — this should match the entry in your Research Articles page.]</p>
       <a class="read-link" href="writings.html#writing-1">Read →</a>
     </div>
 
-    <div class="nav-cards">
+    <div class="nav-cards reveal reveal-delay-2">
       <a class="nav-card" href="about.html">
-        <p class="nav-card-title">About</p>
+        <p class="nav-card-title">My Background</p>
+        <p class="nav-card-desc">My background in research, fieldwork, and political consulting.</p>
       </a>
       <a class="nav-card" href="writings.html">
+        <p class="nav-card-title">Research Articles</p>
         <p class="nav-card-desc">Essays and research on elections, media, and psychology.</p>
       </a>
+      <a class="nav-card" href="stats.html">
+        <p class="nav-card-title">Stats &amp; Figures</p>
+        <p class="nav-card-desc">Fieldwork numbers and the data sources behind the research.</p>
+      </a>
       <a class="nav-card" href="contact.html">
-        <p class="nav-card-desc">Get in touch by email or LinkedIn.</p>
+        <p class="nav-card-title">Get in Touch</p>
+        <p class="nav-card-desc">Reach out by email or LinkedIn.</p>
       </a>
     </div>
   </main>
 </div>
 
-<footer>
-  <div class="wrap" style="padding:0;">
-    © <span id="year"></span> Santhiya Govindaraj
+<footer class="ribbon">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">My Background</a>
+      <a href="writings.html">Research Articles</a>
+      <a href="stats.html">Stats &amp; Figures</a>
+      <a href="contact.html">Get in Touch</a>
+    </nav>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Santhiya Govindaraj. All rights reserved.</p>
+      <p>Ballots and Behaviors</p>
+    </div>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>

@@ -3,12 +3,9 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Writings — Ballots and Behaviors</title>
-<meta name="description" content="Writings on electoral behavior, politics, media, and psychology by Santhiya Govindaraj.">
+<title>Research Articles — Ballots and Behaviors</title>
+<meta name="description" content="Research articles on electoral behavior, politics, media, and psychology by Santhiya Govindaraj.">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,400;9..144,500;9..144,600&family=Inter:wght@400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 <link rel="icon" type="image/png" href="logo.png">
 </head>
@@ -17,7 +14,7 @@
 <header class="ribbon">
   <div class="header-inner">
     <div class="brand">
-      <a href="index.html"><img src="logo.png" class="logo" alt="Ballots and Behaviors logo"></a>
+      <a href="index.html"><img src="logo-header.png" class="logo" alt="Ballots and Behaviors logo"></a>
       <div class="brand-text">
         <h1 class="site-title"><a href="index.html">Ballots and Behaviors</a></h1>
         <p class="tagline">Where politics meets psychology and media</p>
@@ -26,21 +23,23 @@
 
     <nav class="main-nav">
       <a href="index.html">Home</a>
-      <a href="about.html">About</a>
-      <a href="writings.html" aria-current="page">Writings</a>
-      <a href="contact.html">Contact</a>
+      <a href="about.html">My Background</a>
+      <a href="writings.html" aria-current="page">Research Articles</a>
+      <a href="stats.html">Stats &amp; Figures</a>
+      <a href="contact.html">Get in Touch</a>
     </nav>
   </div>
 </header>
+<div class="header-spacer"></div>
 
 <div class="wrap">
   <main>
-    <div class="page-head">
+    <div class="page-head reveal">
       <span class="dot"></span>
-      <h2>Writings</h2>
+      <h2>Research Articles</h2>
     </div>
 
-    <div class="writing" id="writing-1">
+    <div class="writing reveal" id="writing-1">
       <div class="year">2026</div>
       <div>
         <h3><a href="#">[EDIT: Title of your first piece]</a></h3>
@@ -49,7 +48,7 @@
       </div>
     </div>
 
-    <div class="writing">
+    <div class="writing reveal reveal-delay-1">
       <div class="year">2025</div>
       <div>
         <h3><a href="#">[EDIT: Title of your second piece]</a></h3>
@@ -58,7 +57,7 @@
       </div>
     </div>
 
-    <div class="writing">
+    <div class="writing reveal reveal-delay-2">
       <div class="year">2025</div>
       <div>
         <h3><a href="#">[EDIT: Title of your third piece]</a></h3>
@@ -69,15 +68,23 @@
   </main>
 </div>
 
-<footer>
-  <div class="wrap" style="padding:0;">
-    © <span id="year"></span> Santhiya Govindaraj
+<footer class="ribbon">
+  <div class="footer-inner">
+    <nav class="footer-nav">
+      <a href="index.html">Home</a>
+      <a href="about.html">My Background</a>
+      <a href="writings.html">Research Articles</a>
+      <a href="stats.html">Stats &amp; Figures</a>
+      <a href="contact.html">Get in Touch</a>
+    </nav>
+    <div class="footer-bottom">
+      <p>© <span id="year"></span> Santhiya Govindaraj. All rights reserved.</p>
+      <p>Ballots and Behaviors</p>
+    </div>
   </div>
 </footer>
 
-<script>
-  document.getElementById('year').textContent = new Date().getFullYear();
-</script>
+<script src="script.js" defer></script>
 
 </body>
 </html>
